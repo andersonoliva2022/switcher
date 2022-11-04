@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #292C35;
+    --light: #F1F1F1;
+    --label: #111;
+}
+
+body {
+    margin: 0;
+    background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    transition: .6s;
+}
+
+label {
+    width: 236px;
+    height: 102px;
+    border-radius: 50px;
+    background-color: var(--label);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+input {
+    width: 226px;
+    height: 102px;
+    appearance: none; /*a caixa do checkbox fica sijeita a estilização*/
+    border-radius: 50px;
+    cursor: pointer;
+
+    position: fixed;
+}
+
+input[class="check"]:before { /*Bola */
+    
+    content: ''; /*cria uma espécie de div dentro do checkbox */
+    width: 87px;
+    height: 87px;
+    background-color: #F1F1F1;
+    border-radius: 50%;
+
+    position: absolute; /*faz o elemento (bola) se sobresair */
+    top: 0;
+    left: 0;
+
+    transition: .6s;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+input:checked[class="check"]:before{
+    left: 138px; /*cria uma margem esquerda no elemento dando a ilusão de movimento*/
+    transition: .6s;
+}
+
